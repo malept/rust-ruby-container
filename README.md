@@ -9,4 +9,4 @@ Contains:
 
 * Debian Stretch
 * Latest stable Rust via rustup
-* Latest stable Ruby (statically-linked libruby) via ruby-install
+* Latest stable Ruby (dynamically-linked libruby) via ruby-install
