@@ -11,4 +11,4 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y && \
     make install && \
     cd .. && \
     rm -r ruby-install-0.6.1 && \
-    ruby-install ruby 2.4
+    ruby-install ruby 2.4 -- --enable-shared
