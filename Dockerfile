@@ -10,5 +10,4 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y && \
     cd ruby-install-0.6.1 && \
     make install && \
     cd .. && \
-    rm -r ruby-install-0.6.1 && \
-    ruby-install --latest ruby
+    rm -r ruby-install-0.6.1
