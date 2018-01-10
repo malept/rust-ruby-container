@@ -1,7 +1,7 @@
 FROM debian:stretch-backports
 
 RUN apt update && \
-    apt install -y --no-install-recommends ca-certificates curl gcc make && \
+    apt install -y --no-install-recommends ca-certificates curl gcc make git && \
     rm -r /var/cache/apt/archives
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y && \
     curl -Lo ruby-install-0.6.1.tar.gz https://github.com/postmodern/ruby-install/archive/v0.6.1.tar.gz && \
@@ -10,4 +10,5 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y && \
     cd ruby-install-0.6.1 && \
     make install && \
     cd .. && \
-    rm -r ruby-install-0.6.1
+    rm -r ruby-install-0.6.1 && \
+    apt install -y --no-install-recommends $(grep ^apt: /usr/local/share/ruby-install/ruby/dependencies.txt | cut -d: -f2)
